@@ -1,0 +1,15 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ES2015",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}

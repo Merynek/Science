@@ -1,0 +1,21 @@
+{
+  "name": "scirence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node ./index.ts "
+  },
+  "repository": {
+    "type": "git"
+  },
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
