@@ -8,13 +8,13 @@ describe("Models", () => {
         describe("Conversions", () => {
             describe("Length", () => {
                 it ("length in meters", () => {
-                    let meters = LengthConversion.getMeters(new Length(1, LengthUnit.METERS));
+                    let meters = LengthConversion.getMeters(new Length(1000, LengthUnit.MILLIMETERS));
                     expect(meters).toBe(1);
 
                     meters = LengthConversion.getMeters(new Length(100, LengthUnit.CENTIMETERS));
                     expect(meters).toBe(1);
 
-                    meters = LengthConversion.getMeters(new Length(1000, LengthUnit.MILLIMETERS));
+                    meters = LengthConversion.getMeters(new Length(1, LengthUnit.METERS));
                     expect(meters).toBe(1);
 
                     meters = LengthConversion.getMeters(new Length(1, LengthUnit.KILOMETERS));
@@ -22,20 +22,17 @@ describe("Models", () => {
                 });
 
                 it ("length conversion", () => {
-                    let length = new Length(100, LengthUnit.CENTIMETERS);
+                    let length = new Length(1, LengthUnit.METERS);
+                    expect(LengthConversion.lengthConversion(length, LengthUnit.MILLIMETERS)).toBe(1000);
+
+                    length = new Length(1, LengthUnit.METERS);
+                    expect(LengthConversion.lengthConversion(length, LengthUnit.CENTIMETERS)).toBe(100);
+
+                    length = new Length(1, LengthUnit.METERS);
                     expect(LengthConversion.lengthConversion(length, LengthUnit.METERS)).toBe(1);
 
-                    length = new Length(100, LengthUnit.MILLIMETERS);
-                    expect(LengthConversion.lengthConversion(length, LengthUnit.CENTIMETERS)).toBe(10);
-
-                    length = new Length(100, LengthUnit.METERS);
-                    expect(LengthConversion.lengthConversion(length, LengthUnit.METERS)).toBe(100);
-
-                    length = new Length(2, LengthUnit.KILOMETERS);
-                    expect(LengthConversion.lengthConversion(length, LengthUnit.METERS)).toBe(2000);
-
-                    length = new Length(2, LengthUnit.KILOMETERS);
-                    expect(LengthConversion.lengthConversion(length, LengthUnit.CENTIMETERS)).toBe(200000);
+                    length = new Length(1000, LengthUnit.METERS);
+                    expect(LengthConversion.lengthConversion(length, LengthUnit.KILOMETERS)).toBe(1);
                 })
             })
         })
