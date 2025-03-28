@@ -20,6 +20,9 @@ describe("Models", () => {
 
                     velocity = new Velocity(360, VelocityUnit.KM_PER_HOUR);
                     expect(VelocityConversion.velocityConversion(velocity, VelocityUnit.M_PER_SECOND)).toBe(100);
+
+                    velocity = new Velocity(100, VelocityUnit.M_PER_SECOND);
+                    expect(VelocityConversion.velocityConversion(velocity, VelocityUnit.KM_PER_HOUR)).toBe(360);
                 })
             })
         })

@@ -23,7 +23,7 @@ export class VelocityConversion {
             case VelocityUnit.M_PER_SECOND:
                 return metersPerSecond;
             case VelocityUnit.KM_PER_HOUR:
-                return metersPerSecond / this._multiplier_ms_kmh;
+                return metersPerSecond * this._multiplier_ms_kmh;
         }
     }
 }
