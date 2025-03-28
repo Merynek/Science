@@ -10,8 +10,8 @@ describe("Models", () => {
                     let seconds = TimeConversion.getSeconds(new Time(1000, TimeUnit.MILLISECONDS));
                     expect(seconds).toBe(1);
 
-                    seconds = TimeConversion.getSeconds(new Time(60, TimeUnit.SECONDS));
-                    expect(seconds).toBe(60);
+                    seconds = TimeConversion.getSeconds(new Time(1, TimeUnit.SECONDS));
+                    expect(seconds).toBe(1);
 
                     seconds = TimeConversion.getSeconds(new Time(1, TimeUnit.MINUTES));
                     expect(seconds).toBe(60);
@@ -24,7 +24,10 @@ describe("Models", () => {
                 });
 
                 it ("time conversion", () => {
-                    let time = new Time(1000, TimeUnit.MILLISECONDS);
+                    let time = new Time(1, TimeUnit.SECONDS);
+                    expect(TimeConversion.timeConversion(time, TimeUnit.MILLISECONDS)).toBe(1000);
+
+                    time = new Time(1, TimeUnit.SECONDS);
                     expect(TimeConversion.timeConversion(time, TimeUnit.SECONDS)).toBe(1);
 
                     time = new Time(60, TimeUnit.SECONDS);

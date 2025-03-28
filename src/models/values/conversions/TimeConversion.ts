@@ -30,15 +30,15 @@ export class TimeConversion {
 
         switch (unit) {
             case TimeUnit.MILLISECONDS:
-                return seconds * 1000;
+                return seconds * this._millisecondsInSeconds;
             case TimeUnit.SECONDS:
                 return seconds;
             case TimeUnit.MINUTES:
-                return seconds / 60;
+                return seconds / this._secondsInMinutes;
             case TimeUnit.HOURS:
-                return seconds / 3600;
+                return seconds / this._secondsInHours;
             case TimeUnit.DAYS:
-                return seconds / 86400;
+                return seconds / this._secondsInDays;
         }
     }
 }
