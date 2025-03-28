@@ -1,24 +1,13 @@
-import {Length} from "@/src/models/values/Length";
-import {Time} from "@/src/models/values/Time";
+import {ValueWithUnit} from "@/src/models/values/ValueWithUnit";
+import {VelocityUnit} from "@/src/models/values/Units.enum";
+import {VelocityConversion} from "@/src/models/values/conversions/VelocityConversion";
 
-export class Velocity {
-    private readonly _length: Length;
-    private readonly _time: Time;
-
-    constructor(length: Length, time: Time) {
-        this._length = length;
-        this._time = time;
+export class Velocity extends ValueWithUnit<VelocityUnit> {
+    constructor(value: number, unit: VelocityUnit = VelocityUnit.M_PER_SECOND) {
+        super(value, unit);
     }
 
-    get value() {
-        return this._length.basicValue / this._time.basicValue;
-    }
-
-    get time(): Time {
-        return this._time;
-    }
-
-    get length(): Length {
-        return this._length;
+    public getValue(unit: VelocityUnit = VelocityUnit.M_PER_SECOND) {
+        return VelocityConversion.velocityConversion(this, unit);
     }
 }

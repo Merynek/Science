@@ -1,6 +1,6 @@
-import {LengthUnit, TimeUnit} from "@/src/models/values/Units.enum";
+import {LengthUnit, TimeUnit, VelocityUnit} from "@/src/models/values/Units.enum";
 
-type Unit = TimeUnit | LengthUnit;
+type Unit = TimeUnit | LengthUnit | VelocityUnit;
 
 export abstract class ValueWithUnit<T extends Unit> {
     private readonly _basicValue: number;

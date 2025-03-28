@@ -12,3 +12,8 @@ export enum TimeUnit {
     HOURS = "h",
     DAYS = "d"
 }
+
+export enum VelocityUnit {
+    KM_PER_HOUR = "km/h",
+    M_PER_SECOND = "m/s"
+}

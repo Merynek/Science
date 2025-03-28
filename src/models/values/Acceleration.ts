@@ -10,10 +10,6 @@ export class Acceleration {
         this._time = time;
     }
 
-    get value() {
-        return this._velocity.value / this._time.basicValue;
-    }
-
     get time(): Time {
         return this._time;
     }
